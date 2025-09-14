@@ -21,3 +21,10 @@ serviceAccount:
   automount: true
   annotations: {}
   name: ""   # empty means Helm auto-generates name
+
+autoscaling:
+  enabled: false
+  minReplicas: 1
+  maxReplicas: 5
+  targetCPUUtilizationPercentage: 80
+  # targetMemoryUtilizationPercentage: 80   # optional, if you want memory-based scaling
