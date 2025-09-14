@@ -21,8 +21,13 @@ serviceAccount:
   automount: true
   annotations: {}
   name: ""   # empty means Helm auto-generates name
-
-
+resources:
+  limits:
+    cpu: "200m"
+    memory: "256Mi"
+  requests:
+    cpu: "100m"
+    memory: "128Mi"
 autoscaling:
   enabled: false
   minReplicas: 1
