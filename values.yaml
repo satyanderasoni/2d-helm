@@ -6,7 +6,7 @@ replicaCount: 1
 
 image:
   repository: dplaygroundnacr.azurecr.io/myapp   # ACR repo
-  tag: "238"
+  tag: "301"
   pullPolicy: IfNotPresent
 
 service:
