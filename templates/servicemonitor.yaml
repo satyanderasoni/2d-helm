@@ -1,0 +1,15 @@
+{{- if .Values.monitoring.enabled }}
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: {{ include "2d-helm.fullname" . }}-sm
+  labels:
+    release: {{ .Release.Name }}
+spec:
+  selector:
+    matchLabels:
+      app: {{ include "2d-helm.name" . }}
+  endpoints:
+  - port: http
+    interval: {{ .Values.monitoring.prometheus.scrapeInterval }}
+{{- end }}
